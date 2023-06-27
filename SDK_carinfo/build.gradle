@@ -43,24 +43,3 @@ dependencies {
 
 }
 
-
-apply plugin: 'maven-publish'
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId 'com.ronlu'
-            artifactId 'sdk_carinfo'
-            version '1.0.0' // Update with your desired version number
-
-            // Specify the location of the AAR file
-            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
-        }
-    }
-
-    repositories {
-        maven {
-            url 'https://jitpack.io'
-        }
-    }
-}
